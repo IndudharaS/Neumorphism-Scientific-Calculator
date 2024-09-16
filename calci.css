@@ -1,0 +1,166 @@
+body {
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    user-select: none;
+    background: #ecf0f3;
+    transition: background-color 0.3s ease;
+}
+
+.dark-mode {
+    background: #1a1a1a;
+    color: #ffffff;
+}
+
+.container {
+    width: 450px;
+    /* Increased container width */
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 13px 13px 20px #cbced1,
+        -13px -13px 20px #ffffff;
+}
+
+.container.dark-mode {
+    box-shadow: 13px 13px 20px #0a0a0a,
+        -13px -13px 20px #333;
+}
+
+.row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.row button {
+    flex: 1;
+    /* Ensure all buttons take equal space */
+    height: 60px;
+    /* Uniform height for all buttons */
+    font-size: 18px;
+    border: none;
+    outline: none;
+    margin: 5px;
+    border-radius: 8px;
+    transition: .2s ease-in-out;
+    box-shadow: 5px 5px 8px #00000020,
+        -5px -5px 8px #ffff;
+    background-color: #ecf0f3;
+}
+
+.row button:hover {
+    transform: scale(1.1);
+}
+
+.row button.dark-mode {
+    background-color: #333;
+    /* Dark button background */
+    color: #ffffff;
+    /* Light text for dark mode buttons */
+    box-shadow: 5px 5px 8px #111,
+        -5px -5px 8px #444;
+}
+
+.display {
+    width: 100%;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.display #screen {
+    width: 100%;
+    max-width: 430px;
+    height: 90px;
+    /* Slightly increased for better visibility */
+    font-size: 40px;
+    outline: none;
+    border: none;
+    text-align: right;
+    padding-right: 20px;
+    background: #ecf0f3;
+    border-radius: 10px;
+    box-shadow: inset 8px 8px 8px #cbced1,
+        inset -8px -8px 8px #ffffff;
+}
+
+.display #screen.dark-mode {
+    background: #333;
+    color: #ffffff;
+    box-shadow: inset 8px 8px 8px #0a0a0a,
+        inset -8px -8px 8px #444;
+}
+
+/* Highlight specific buttons */
+#eval {
+    background-color: #33cc33;
+    color: #fff;
+}
+
+#ce,
+#ac {
+    background-color: #ff6666;
+    color: #fff;
+}
+
+/* Ensure highlighted buttons stand out in dark mode */
+#eval.dark-mode {
+    background-color: #1aff1a;
+    /* Lighter green in dark mode */
+    color: #000;
+}
+
+#ce.dark-mode,
+#ac.dark-mode {
+    background-color: #ff4d4d;
+    /* Lighter red for dark mode */
+    color: #000;
+}
+
+/* Toggle button styling */
+#themeToggle {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    padding: 10px 20px;
+    border: none;
+    background: #33ccff;
+    color: #fff;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 480px) {
+    .container {
+        width: 100%;
+        padding: 10px;
+    }
+
+    .row button {
+        width: 60px;
+        height: 50px;
+        font-size: 14px;
+    }
+
+    #screen {
+        font-size: 30px;
+    }
+}
+
+#name {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    font-size: 12px;
+    color: #666;
+}
+
+#name strong {
+    font-weight: bold;
+    color: #000;
+    /* Adjust this color for better visibility if needed */
+}
